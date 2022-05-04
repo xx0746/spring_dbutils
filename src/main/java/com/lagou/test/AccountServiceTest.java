@@ -19,10 +19,12 @@ public class AccountServiceTest {
     @Test
     public void testSave(){
 
+
         Account account = new Account();
         account.setName("lucy");
         account.setMoney(888d);
         accountService.save(account);
+
 
     }
 
@@ -62,6 +64,16 @@ public class AccountServiceTest {
         accountService.delete(3);
     }
 
+    @Test
+    public void testID() {
+        List<Account> all = accountService.findAll();
+        for (Account account : all) {
+            System.out.println(account.getMoney());
+        }
+        System.out.println(all);
+
+
+    }
 
 
 
